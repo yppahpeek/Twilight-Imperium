@@ -176,11 +176,11 @@ def scrap(att_fleet, def_fleet):
 # function makes sure sustain hits are applied first, then hits for the rest of the fleet
 def take_damage(f, h):
     # sustain damage comes first
-    # if f.total_sustain > 0:
-    #     sustain_damage(f, h)
+    if f.total_sustain > 0:
+        sustain_damage(f, h)
        
-        # # TODO - for debugging. Find out why att_fleet is more likely to win the def_fleet in an equal battle
-        # print(f.total_hp, "HP and ", f.total_sustain, " total sustain")
+        # TODO - for debugging. Find out why att_fleet is more likely to win the def_fleet in an equal battle
+        print(f.total_hp, "HP and ", f.total_sustain, " total sustain")
         
     # once sustain hits are dealt, start removing ships
     hit_point_damage(f, h)
