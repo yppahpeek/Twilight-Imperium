@@ -6,6 +6,7 @@ class Fleet():
     def __init__(self, units):
         # Takes list of strs and, for every valid unit.type, creates a new Unit in the Fleet 
         self.units = units
+        
                             
     def number_of_hits(self):
         hits = 0
@@ -178,10 +179,7 @@ def take_damage(f, h):
     # sustain damage comes first
     if f.total_sustain > 0:
         sustain_damage(f, h)
-       
-        # TODO - for debugging. Find out why att_fleet is more likely to win the def_fleet in an equal battle
-        print(f.total_hp, "HP and ", f.total_sustain, " total sustain")
-        
+               
     # once sustain hits are dealt, start removing ships
     hit_point_damage(f, h)
     
