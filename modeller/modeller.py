@@ -12,6 +12,11 @@ class Fleet():
         hits = 0
         for unit in self.units:
             
+            # skip unit if it's dead
+            if unit.hp == 0:
+                continue
+            
+            
             if unit.type == "ws":
                 n_rolls = 3
             else:
